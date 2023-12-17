@@ -1,0 +1,56 @@
+@import "./index.scss";
+
+.container {
+  background-color: $grey-color;
+  margin-top: 30px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.container-collapse {
+  @extend .container;
+
+  .title {
+    &:hover {
+      cursor: pointer;
+    }
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .list,
+  .text {
+    padding: 1.5em;
+  }
+
+  .chevron-down {
+    transform: rotate(180deg);
+  }
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: var(--main-bd-radius);
+  overflow: hidden;
+  transition: 0.2s ease-out;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
+    z-index: 3;
+  }
+}
+
+.container-cards {
+  @extend .container;
+
+  padding: 50px;
+}
