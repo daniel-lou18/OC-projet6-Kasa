@@ -1,13 +1,15 @@
 function StarRating({ rating, numStars = 5 }) {
   return (
-    <div className="list-stars">
+    <ul className="list-stars">
       {Array.from({ length: numStars }, (_, idx) => (
-        <i
-          className={`fa-solid fa-star ${rating > idx ? "filled" : ""}`}
-          key={idx}
-        />
+        <li>
+          <i
+            className={`fa-solid fa-star ${rating > idx ? "filled" : ""}`}
+            key={idx}
+          />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 

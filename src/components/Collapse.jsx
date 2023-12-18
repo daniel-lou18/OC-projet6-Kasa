@@ -1,12 +1,11 @@
 import { useState } from "react";
-import Container from "./Container";
 
 function Collapse({ item, title }) {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const { description, equipments } = item;
 
   return (
-    <Container className="container-collapse">
+    <div className="container-collapse">
       <h3 className="title" onClick={() => setIsCollapsed((val) => !val)}>
         {title}
         <span className={`${isCollapsed ? "" : "chevron-down"}`}>
@@ -25,7 +24,7 @@ function Collapse({ item, title }) {
           ))}
         </ul>
       )}
-    </Container>
+    </div>
   );
 }
 

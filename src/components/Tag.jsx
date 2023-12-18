@@ -1,5 +1,5 @@
 function Tag({ children }) {
-  return <div className="tag">{children}</div>;
+  return <li className="tag">{children}</li>;
 }
 
 export default Tag;
