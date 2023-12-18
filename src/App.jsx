@@ -8,6 +8,8 @@ import {
 import AppLayout from "./pages/AppLayout";
 import Home from "./pages/Home";
 import DetailPage from "./pages/DetailPage";
+import About from "./pages/About";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   const router = createBrowserRouter(
@@ -16,6 +18,8 @@ function App() {
         <Route element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path="details/:id" element={<DetailPage />} />
+          <Route path="about" element={<About />} />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
       </Route>
     )

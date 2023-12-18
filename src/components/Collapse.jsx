@@ -3,6 +3,7 @@ import Container from "./Container";
 
 function Collapse({ item, title }) {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const { description, equipments } = item;
 
   return (
     <Container className="container-collapse">
@@ -13,11 +14,11 @@ function Collapse({ item, title }) {
         </span>
       </h3>
       {!isCollapsed && title !== "Équipements" && (
-        <p className="text">{item.description}</p>
+        <p className="text">{description}</p>
       )}
       {!isCollapsed && title === "Équipements" && (
         <ul className="list">
-          {item.equipments.map((equipm) => (
+          {equipments.map((equipm) => (
             <li className="item" key={equipm}>
               {equipm}
             </li>

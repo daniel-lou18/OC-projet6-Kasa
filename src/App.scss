@@ -1,5 +1,17 @@
 @import "./index.scss";
 
+%list-horizontal {
+  display: flex;
+  gap: 10px;
+}
+
+%centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/////////////////////////////////
+
 .container {
   background-color: $grey-color;
   margin-top: 30px;
@@ -75,17 +87,6 @@
   }
 }
 
-%list-horizontal {
-  display: flex;
-  gap: 10px;
-}
-
-%centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .list-stars {
   @extend %list-horizontal;
   color: #e3e3e3;
@@ -106,4 +107,51 @@
   background-color: $primary-color;
   border-radius: 10px;
   font-size: 14px;
+}
+
+.carousel {
+  position: relative;
+
+  ul {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 415px;
+  }
+
+  li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: 0.5s ease-out;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // Repositionner l'image pour qu'elle soit centrée verticalement
+    object-position: 0 50%;
+  }
+
+  .wrapper-icon {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: $white-color;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .icon-left {
+    left: 20px;
+  }
+
+  .icon-right {
+    right: 20px;
+  }
 }

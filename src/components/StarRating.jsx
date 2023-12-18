@@ -1,13 +1,19 @@
-function StarRating({ rating }) {
+function StarRating({ rating, numStars = 5 }) {
   return (
     <div className="list-stars">
-      <i className={`fa-solid fa-star ${rating > 0 ? "filled" : ""}`}></i>
-      <i className={`fa-solid fa-star ${rating > 1 ? "filled" : ""}`}></i>
-      <i className={`fa-solid fa-star ${rating > 2 ? "filled" : ""}`}></i>
-      <i className={`fa-solid fa-star ${rating > 3 ? "filled" : ""}`}></i>
-      <i className={`fa-solid fa-star ${rating > 4 ? "filled" : ""}`}></i>
+      {Array.from({ length: numStars }, (_, idx) => (
+        <i
+          className={`fa-solid fa-star ${rating > idx ? "filled" : ""}`}
+          key={idx}
+        />
+      ))}
     </div>
   );
 }
+
+// Créer un tableau à l'aide de la méthode Array.from :
+// - premier argument : objet contenant uniquement la propriété length permet de créer un tableau
+// - second argument : fonction de retour qui exécute une fonction .map sur chaque élément du tableau généré
+// Nous avons uniquement besoin de l'index pour attribuer de façon dynamique la classe "filled" à chaque étoile
 
 export default StarRating;
