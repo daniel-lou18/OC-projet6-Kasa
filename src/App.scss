@@ -112,6 +112,10 @@
 .carousel {
   position: relative;
 
+  > *:not(ul) {
+    position: absolute;
+  }
+
   ul {
     overflow: hidden;
     position: relative;
@@ -136,14 +140,16 @@
   }
 
   .wrapper-icon {
-    position: absolute;
     z-index: 5;
     top: 50%;
     transform: translateY(-50%);
     font-size: 50px;
     color: $white-color;
     &:hover {
-      color: $primary-color;
+      color: rgba($primary-color, 0.8);
+    }
+    &:active {
+      color: darken($primary-color, 10%);
     }
   }
 
@@ -153,5 +159,12 @@
 
   .icon-right {
     right: 20px;
+  }
+
+  .pagination {
+    color: $white-color;
+    bottom: 30px;
+    left: 50%;
+    font-size: 18px;
   }
 }

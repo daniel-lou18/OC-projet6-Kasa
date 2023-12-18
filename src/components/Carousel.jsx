@@ -35,6 +35,7 @@ function Carousel({ imageUrls }) {
       <button className="wrapper-icon icon-right" onClick={handleRightClick}>
         <i className="fa-solid fa-chevron-right"></i>
       </button>
+      <div className="pagination">{`${position + 1}/${imageUrls.length}`}</div>
     </div>
   );
 }

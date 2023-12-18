@@ -1,10 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function AppLayout() {
   return (
     <div className="app-layout">
       <header>
-        <img src="LOGO.png" alt="logo" />
+        <Link to="/">
+          <img src="LOGO.png" alt="logo" />
+        </Link>
       </header>
       <main>
         <Outlet />
