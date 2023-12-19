@@ -2,7 +2,7 @@ import "./footer.scss";
 
 function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <div className="wrapper-img">
         <img src="/LOGO-footer.png" alt="logo" />
       </div>

@@ -1,0 +1,78 @@
+@import "./mixins.scss";
+
+$primary-color: #ff6060;
+$white-color: #ffffff;
+$grey-color: #f6f6f6;
+
+$breakpoint-medium: 1024px;
+$breakpoint-small: 767.98px;
+
+%list-horizontal {
+  display: flex;
+  gap: 10px;
+}
+
+%centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+
+  > * {
+    flex: 1;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container {
+  background-color: $grey-color;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.column-left {
+  @include column(0);
+
+  h1 {
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+
+  h2 {
+    margin: 0 0 20px 0;
+  }
+}
+
+.column-about {
+  @include column(30px);
+}
+
+.row-end {
+  @include row(flex-end, 50px, initial);
+  align-items: start;
+}
+
+.row-summary {
+  @extend .row;
+
+  margin: 30px 0;
+
+  > *:last-child {
+    flex: initial;
+  }
+}
+
+.row-start {
+  @include row(flex-start);
+  // Pour éviter qu'un collapse s'étire quand l'autre collapse est plus haut
+}

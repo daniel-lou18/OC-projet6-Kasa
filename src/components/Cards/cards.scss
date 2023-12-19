@@ -1,4 +1,4 @@
-@import "../../styles/App.scss";
+@import "../../styles/variables.scss";
 
 .container-cards {
   @extend .container;
@@ -44,5 +44,17 @@
     right: 0;
     background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
     z-index: 3;
+  }
+}
+
+@media screen and (max-width: $breakpoint-medium) {
+  .container-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .container-cards {
+    grid-template-columns: 1fr;
   }
 }

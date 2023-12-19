@@ -1,8 +1,9 @@
-@import "../../styles/App.scss";
+@import "../../styles/variables.scss";
 
 .container-collapse {
   @extend .container;
   transition: 0.2s;
+  overflow: hidden;
 
   &:not(.visible) {
     // Pour éviter que le background gris soit visible quand le collapse est fermé et l'autre collapse sur la même ligne est ouvert
@@ -21,10 +22,12 @@
 
   .list,
   .text {
+    overflow: hidden;
+    max-height: 0;
     transform: scaleY(0);
     transform-origin: top;
     transition: 0.2s;
-    padding: 1.5em;
+    padding: 0 1.5em;
   }
 
   span {
@@ -39,6 +42,8 @@
 .visible {
   .list,
   .text {
+    max-height: 500px;
+    padding: 1.5em;
     transition: 0.2s;
     transform: scaleY(1);
   }

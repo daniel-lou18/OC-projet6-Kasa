@@ -1,0 +1,42 @@
+@import "../../styles/variables.scss";
+
+$background-home: url(/Image-home.png);
+$background-about: url(/Image-about.png);
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 223px;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  background-size: cover;
+  background-position: center;
+
+  &.home {
+    background-image: $background-home;
+  }
+
+  &.about {
+    background-image: $background-about;
+  }
+
+  h1 {
+    color: $white-color;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .overlay {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}

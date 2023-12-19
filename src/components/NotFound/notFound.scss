@@ -1,0 +1,23 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.column-404 {
+  @include column(100px);
+  align-items: center;
+
+  h1 {
+    font-size: 288px;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  a {
+    color: $primary-color;
+    &:hover {
+      color: darken($primary-color, 30%);
+    }
+  }
+}
