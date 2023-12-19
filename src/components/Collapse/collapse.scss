@@ -1,0 +1,45 @@
+@import "../../styles/App.scss";
+
+.container-collapse {
+  @extend .container;
+  transition: 0.2s;
+
+  &:not(.visible) {
+    // Pour éviter que le background gris soit visible quand le collapse est fermé et l'autre collapse sur la même ligne est ouvert
+    background-color: $white-color;
+  }
+
+  .title {
+    &:hover {
+      cursor: pointer;
+    }
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .list,
+  .text {
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.2s;
+    padding: 1.5em;
+  }
+
+  span {
+    transition: 0.2s;
+  }
+
+  .chevron-down {
+    transform: rotate(180deg);
+  }
+}
+
+.visible {
+  .list,
+  .text {
+    transition: 0.2s;
+    transform: scaleY(1);
+  }
+}

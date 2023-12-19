@@ -1,0 +1,62 @@
+@import "../../styles/App.scss";
+
+.carousel {
+  position: relative;
+
+  > *:not(ul) {
+    position: absolute;
+  }
+
+  ul {
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 415px;
+  }
+
+  li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: 0.5s ease-out;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // Repositionner l'image pour qu'elle soit centrée verticalement
+    object-position: 0 50%;
+  }
+
+  .wrapper-icon {
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: $white-color;
+    &:hover {
+      color: rgba($primary-color, 0.8);
+    }
+    &:active {
+      color: darken($primary-color, 10%);
+    }
+  }
+
+  .icon-left {
+    left: 20px;
+  }
+
+  .icon-right {
+    right: 20px;
+  }
+
+  .pagination {
+    color: $white-color;
+    bottom: 30px;
+    left: 50%;
+    font-size: 18px;
+  }
+}

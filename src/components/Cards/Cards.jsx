@@ -1,4 +1,5 @@
 import Card from "./Card";
+import "./cards.scss";
 
 function Cards({ items }) {
   return (

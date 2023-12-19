@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./carousel.scss";
 
 function Carousel({ imageUrls }) {
   const [position, setPosition] = useState(0);

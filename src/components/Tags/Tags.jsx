@@ -1,4 +1,5 @@
 import Tag from "./Tag";
+import "./tags.scss";
 
 function Tags({ tags }) {
   return (

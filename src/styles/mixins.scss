@@ -1,0 +1,15 @@
+@mixin row($justify-content: space-between, $gap: 5%, $flex: 1) {
+  display: flex;
+  justify-content: $justify-content;
+  gap: $gap;
+
+  > * {
+    flex: $flex;
+  }
+}
+
+@mixin column($gap: 10px) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}

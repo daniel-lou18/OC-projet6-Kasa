@@ -1,4 +1,4 @@
-import Cards from "../components/Cards";
+import Cards from "../components/Cards/Cards";
 import logements from "../data/logements.json";
 
 function Home() {

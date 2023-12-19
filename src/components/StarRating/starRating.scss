@@ -1,0 +1,15 @@
+@import "../../styles/App.scss";
+
+.list-stars {
+  @extend %list-horizontal;
+  color: #e3e3e3;
+  justify-content: flex-end;
+
+  li {
+    font-size: 24px;
+  }
+
+  .filled {
+    color: $primary-color;
+  }
+}

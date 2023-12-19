@@ -1,9 +1,9 @@
-import StarRating from "../components/StarRating";
-import Tags from "../components/Tags";
-import Collapse from "../components/Collapse";
+import StarRating from "../components/StarRating/StarRating";
+import Tags from "../components/Tags/Tags";
+import Collapse from "../components/Collapse/Collapse";
 import { useParams } from "react-router-dom";
 import logements from "../data/logements.json";
-import Carousel from "../components/Carousel";
+import Carousel from "../components/Carousel/Carousel";
 import Row from "../components/Row";
 import Column from "../components/Column";
 
@@ -14,7 +14,7 @@ function DetailPage() {
   return (
     <div>
       <Carousel imageUrls={item.pictures} />
-      <Row>
+      <Row className="row-summary">
         <Column className="column-left">
           <h1>{item.title}</h1>
           <h2>{item.location}</h2>
@@ -24,7 +24,7 @@ function DetailPage() {
           <StarRating rating={item.rating} />
         </Column>
       </Row>
-      <Row>
+      <Row className="row-start">
         <Collapse item={item} title="Description" />
         <Collapse item={item} title="Équipements" />
       </Row>

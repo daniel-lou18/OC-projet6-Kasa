@@ -1,3 +1,5 @@
+import "./starRating.scss";
+
 function StarRating({ rating, numStars = 5 }) {
   return (
     <ul className="list-stars">

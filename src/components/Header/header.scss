@@ -1,0 +1,11 @@
+@import "../../styles/App.scss";
+
+.header {
+  margin-bottom: 50px;
+
+  a {
+    text-decoration: none;
+    color: $primary-color;
+    font-size: 24px;
+  }
+}
