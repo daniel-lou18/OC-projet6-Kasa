@@ -4,7 +4,7 @@ import Footer from "../components/Footer/Footer";
 
 function AppLayout() {
   return (
-    <div className="app-layout">
+    <>
       <div className="container-main">
         <Header />
         <main>
@@ -12,7 +12,7 @@ function AppLayout() {
         </main>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

@@ -12,7 +12,7 @@ function DetailPage() {
   const item = logements.filter((logement) => logement.id === id)[0];
   console.log(item);
   return (
-    <div>
+    <>
       <Carousel imageUrls={item.pictures} />
       <Row className="row-summary">
         <Column className="column-left">
@@ -28,7 +28,7 @@ function DetailPage() {
         <Collapse item={item} title="Description" />
         <Collapse item={item} title="Équipements" />
       </Row>
-    </div>
+    </>
   );
 }
 

@@ -4,10 +4,10 @@ import logements from "../data/logements.json";
 
 function Home() {
   return (
-    <div>
+    <>
       <Banner>Chez vous, partout et ailleurs</Banner>
       <Cards items={logements} />
-    </div>
+    </>
   );
 }
 
