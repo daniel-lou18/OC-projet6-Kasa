@@ -1,0 +1,30 @@
+@import "../../main.scss";
+
+.row-host {
+  @include row();
+  align-items: center;
+  height: 64px;
+
+  span {
+    @extend %font-18;
+    text-align: right;
+  }
+
+  img {
+    flex: none;
+    height: 100%;
+    width: auto;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .row-host {
+    height: 33px;
+
+    span {
+      font-size: 12px;
+    }
+  }
+}

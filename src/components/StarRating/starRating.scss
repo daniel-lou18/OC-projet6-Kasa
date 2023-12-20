@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../../main.scss";
 
 .list-stars {
   @extend %list-horizontal;
@@ -11,5 +11,13 @@
 
   .filled {
     color: $primary-color;
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .list-stars {
+    li {
+      font-size: 14px;
+    }
   }
 }

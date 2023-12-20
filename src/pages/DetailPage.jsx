@@ -6,22 +6,24 @@ import logements from "../data/logements.json";
 import Carousel from "../components/Carousel/Carousel";
 import Row from "../components/Row";
 import Column from "../components/Column";
+import Host from "../components/Host/Host";
 
 function DetailPage() {
   const { id } = useParams();
   const item = logements.filter((logement) => logement.id === id)[0];
-  console.log(item);
+  const { pictures, title, location, tags, host, rating } = item;
   return (
     <>
-      <Carousel imageUrls={item.pictures} />
+      <Carousel imageUrls={pictures} />
       <Row className="row-summary">
         <Column className="column-left">
-          <h1>{item.title}</h1>
-          <h2>{item.location}</h2>
-          <Tags tags={item.tags} />
+          <h1>{title}</h1>
+          <h2>{location}</h2>
+          <Tags tags={tags} />
         </Column>
-        <Column>
-          <StarRating rating={item.rating} />
+        <Column className="column-right">
+          <Host host={host} />
+          <StarRating rating={rating} />
         </Column>
       </Row>
       <Row className="row-start">

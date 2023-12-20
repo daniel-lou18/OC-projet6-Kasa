@@ -5,11 +5,13 @@ function Carousel({ imageUrls }) {
   const [position, setPosition] = useState(0);
 
   const handleRightClick = () => {
+    // retour à la première image après la dernière
     if (position === imageUrls.length - 1) return setPosition(0);
     setPosition((position) => position + 1);
   };
 
   const handleLeftClick = () => {
+    // retour à la dernière image quand on appuie sur la flèche gauche
     if (position === 0) return setPosition(imageUrls.length - 1);
     setPosition((position) => position - 1);
   };
@@ -30,12 +32,20 @@ function Carousel({ imageUrls }) {
           </li>
         ))}
       </ul>
-      <button className="wrapper-icon icon-left" onClick={handleLeftClick}>
-        <i className="fa-solid fa-chevron-left"></i>
-      </button>
-      <button className="wrapper-icon icon-right" onClick={handleRightClick}>
-        <i className="fa-solid fa-chevron-right"></i>
-      </button>
+      {imageUrls.length > 1 && (
+        // uniquement afficher les boutons s'il y a plusieurs photos
+        <>
+          <button className="wrapper-icon icon-left" onClick={handleLeftClick}>
+            <i className="fa-solid fa-chevron-left"></i>
+          </button>
+          <button
+            className="wrapper-icon icon-right"
+            onClick={handleRightClick}
+          >
+            <i className="fa-solid fa-chevron-right"></i>
+          </button>
+        </>
+      )}
       <div className="pagination">{`${position + 1}/${imageUrls.length}`}</div>
     </div>
   );

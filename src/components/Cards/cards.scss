@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../../main.scss";
 
 .container-cards {
   @extend .container;
@@ -37,11 +37,7 @@
   }
 
   .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    @extend %absolute-fill;
     background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
     z-index: 3;
   }
@@ -56,5 +52,12 @@
 @media screen and (max-width: $breakpoint-small) {
   .container-cards {
     grid-template-columns: 1fr;
+    background-color: transparent;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .card {
+    box-shadow: none;
   }
 }

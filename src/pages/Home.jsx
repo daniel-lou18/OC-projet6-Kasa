@@ -5,7 +5,9 @@ import logements from "../data/logements.json";
 function Home() {
   return (
     <>
-      <Banner>Chez vous, partout et ailleurs</Banner>
+      <Banner>
+        Chez vous,{<br className="newline" />} partout et ailleurs
+      </Banner>
       <Cards items={logements} />
     </>
   );

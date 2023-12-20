@@ -4,6 +4,7 @@ import "./collapse.scss";
 function Collapse({ item, title }) {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const { description, equipments } = item;
+  // rendu conditionnel en fonction de la valeur de "title" à l'aide de l'opérateur ternaire
 
   return (
     <div className={`container-collapse ${isCollapsed ? "" : "visible"}`}>
@@ -13,8 +14,7 @@ function Collapse({ item, title }) {
           <i className="fa-solid fa-chevron-up"></i>
         </span>
       </h3>
-      {title !== "Équipements" && <p className={`text`}>{description}</p>}
-      {title === "Équipements" && (
+      {title === "Équipements" ? (
         <ul className={`list`}>
           {equipments.map((equipm) => (
             <li className="item" key={equipm}>
@@ -22,6 +22,8 @@ function Collapse({ item, title }) {
             </li>
           ))}
         </ul>
+      ) : (
+        <p className={`text`}>{description}</p>
       )}
     </div>
   );

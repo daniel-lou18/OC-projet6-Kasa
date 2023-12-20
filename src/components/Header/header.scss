@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import "../../main.scss";
 
 .header {
   margin-bottom: 50px;
@@ -14,6 +14,19 @@
 
     &.active {
       text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .header {
+    img {
+      width: 145px;
+      height: auto;
+    }
+    a {
+      font-size: 12px;
+      text-transform: uppercase;
     }
   }
 }

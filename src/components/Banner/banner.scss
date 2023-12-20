@@ -1,7 +1,4 @@
-@import "../../styles/variables.scss";
-
-$background-home: url(/Image-home.png);
-$background-about: url(/Image-about.png);
+@import "../../main.scss";
 
 .banner {
   position: relative;
@@ -22,21 +19,37 @@ $background-about: url(/Image-about.png);
   }
 
   h1 {
+    @extend %centered-absolute;
     color: $white-color;
-    position: absolute;
     z-index: 5;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+    .newline {
+      display: none;
+    }
   }
 
   .overlay {
-    position: absolute;
+    @extend %absolute-fill;
     z-index: 3;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
     background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .banner {
+    height: 111px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+    h1 {
+      font-size: 24px;
+      font-weight: 500;
+      left: 20px;
+      transform: translate(0, -50%);
+
+      .newline {
+        display: inline;
+      }
+    }
   }
 }

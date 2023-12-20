@@ -1,0 +1,120 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+.container-main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 50px 100px;
+}
+
+.container {
+  background-color: $grey-color;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+// Garder les classes "row" et "column" pour les composants Row et Column (ce sont les classes par défaut)
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+
+  > * {
+    flex: 1;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.column-left {
+  @include column(0);
+
+  h1 {
+    line-height: 1.2;
+    margin-bottom: 5px;
+  }
+
+  h2 {
+    margin: 0 0 20px 0;
+  }
+}
+
+.column-right {
+  @include column(0);
+
+  justify-content: space-around;
+}
+
+.column-about {
+  @include column(30px);
+}
+
+.row-end {
+  @include row(flex-end, 50px, initial);
+  align-items: start;
+}
+
+.row-summary {
+  @include row();
+
+  margin: 30px 0;
+
+  > *:last-child {
+    flex: initial;
+  }
+  // sur la page du logement, la colonne de droite englobant l'hôte et le rating ne peut pas s'étirer
+  // pour permettre à la colonne de gauche de s'étirer au max si le titre prend beaucoup de place
+}
+
+.row-start {
+  @include row(flex-start);
+  // Pour éviter qu'un collapse s'étire quand l'autre collapse est plus haut
+}
+
+/////////////////////////////////////
+
+@media screen and (max-width: $breakpoint-small) {
+  .container-main {
+    padding: 20px;
+  }
+
+  .row-end {
+    align-items: center;
+    gap: 20%;
+  }
+
+  .row-summary,
+  .row-start {
+    flex-direction: column;
+  }
+
+  .row-summary {
+    margin: 20px 0;
+  }
+
+  .row-start {
+    gap: 20px;
+  }
+
+  .column-left {
+    h1 {
+      font-size: 18px;
+    }
+
+    h2 {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .column-right {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

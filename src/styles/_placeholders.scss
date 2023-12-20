@@ -1,0 +1,38 @@
+%font-18 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+%list-horizontal {
+  display: flex;
+  gap: 10px;
+}
+
+%centered {
+  // centrer horizontalement et verticalement à l'aide de flexbox
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%space-between {
+  @extend %centered;
+
+  justify-content: space-between;
+}
+
+%centered-absolute {
+  // centrer horizontalement et verticalement à l'aide de position absolute
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%absolute-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
