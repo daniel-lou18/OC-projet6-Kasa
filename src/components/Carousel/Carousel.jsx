@@ -46,7 +46,7 @@ function Carousel({ imageUrls }) {
           </button>
         </>
       )}
-      <div className="pagination">{`${position + 1}/${imageUrls.length}`}</div>
+      {imageUrls.length > 1 && <div className="pagination">{`${position + 1}/${imageUrls.length}`}</div>}
     </div>
   );
 }

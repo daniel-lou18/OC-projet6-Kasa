@@ -9,9 +9,10 @@
     font-size: 24px;
 
     &:hover {
-      color: darken($primary-color, 30%);
+      color: darken($primary-color, 10%);
     }
 
+    // React Router ajoute la classe ".active" à un NavLink actif
     &.active {
       text-decoration: underline;
     }

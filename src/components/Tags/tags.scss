@@ -18,11 +18,12 @@
 
 @media screen and (max-width: $breakpoint-small) {
   .list-tags {
-    min-width: 84px;
     margin-bottom: 20px;
   }
 
   .tag {
+    min-width: 84px;
+    height: 18px;
     font-size: 10px;
   }
 }

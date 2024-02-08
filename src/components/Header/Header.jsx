@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+// utiliser des NavLinks pour la mise en forme des liens actifs
 import Row from "../Row";
 import "./header.scss";
 
