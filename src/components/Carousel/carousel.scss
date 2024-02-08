@@ -62,6 +62,10 @@
     left: 50%;
     transform: translateX(-50%);
   }
+
+  .pagination-mobile {
+    display: none;
+  }
 }
 
 @media screen and (max-width: $breakpoint-small) {
@@ -80,6 +84,22 @@
 
     .icon-right {
       right: 8px;
+    }
+
+    .pagination {
+      display: none;
+    }
+
+    .pagination-mobile {
+      display: flex;
+      gap: 1.25em;
+
+      bottom: 30px;
+      // centrer horizontalement le compteur de pages
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75em;
+      color: $primary-color;
     }
   }
 }

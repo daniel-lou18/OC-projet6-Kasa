@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./carousel.scss";
+import PaginationDot from "../PaginationDot/PaginationDot";
 
 function Carousel({ imageUrls }) {
   const [position, setPosition] = useState(0);
@@ -14,6 +15,10 @@ function Carousel({ imageUrls }) {
     // retour à la dernière image quand on appuie sur la flèche gauche
     if (position === 0) return setPosition(imageUrls.length - 1);
     setPosition((position) => position - 1);
+  };
+
+  const handleMobileClick = (position) => {
+    setPosition(position);
   };
 
   return (
@@ -46,7 +51,23 @@ function Carousel({ imageUrls }) {
           </button>
         </>
       )}
-      {imageUrls.length > 1 && <div className="pagination">{`${position + 1}/${imageUrls.length}`}</div>}
+      {imageUrls.length > 1 && (
+        <div className="pagination">{`${position + 1}/${
+          imageUrls.length
+        }`}</div>
+      )}
+      {imageUrls.length > 1 && (
+        <div className="pagination-mobile">
+          {imageUrls.map((_, idx) => (
+            <PaginationDot
+              position={position}
+              idx={idx}
+              onClick={handleMobileClick}
+              key={idx}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
