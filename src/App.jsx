@@ -13,13 +13,11 @@ import PageNotFound from "./pages/PageNotFound";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route>
-        <Route element={<AppLayout />}>
-          <Route index element={<Home />} />
-          <Route path="details/:id" element={<DetailPage />} />
-          <Route path="about" element={<About />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Route>
+      <Route element={<AppLayout />}>
+        <Route index element={<Home />} />
+        <Route path="details/:id" element={<DetailPage />} />
+        <Route path="about" element={<About />} />
+        <Route path="*" element={<PageNotFound />} />
       </Route>
     )
   );

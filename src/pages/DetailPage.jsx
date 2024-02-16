@@ -8,6 +8,7 @@ import Row from "../components/Row";
 import Column from "../components/Column";
 import Host from "../components/Host/Host";
 import { useEffect } from "react";
+import Title from "../components/Title";
 
 function DetailPage() {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ function DetailPage() {
   const item = logements.filter((logement) => logement.id === id)[0];
 
   useEffect(() => {
-    if (!item) navigate("wrongid");
+    if (!item) navigate("page-not-found");
   }, [item, navigate]);
 
   if (!item) return null;
@@ -26,8 +27,7 @@ function DetailPage() {
       <Carousel imageUrls={pictures} />
       <Row className="row-summary">
         <Column className="column-left">
-          <h1>{title}</h1>
-          <h2>{location}</h2>
+          <Title title={title} location={location} />
           <Tags tags={tags} />
         </Column>
         <Column className="column-right">

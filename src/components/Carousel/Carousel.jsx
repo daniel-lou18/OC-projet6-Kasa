@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./carousel.scss";
-import PaginationDot from "../PaginationDot/PaginationDot";
+import Pagination from "./Pagination";
+import Buttons from "./Buttons";
 
 function Carousel({ imageUrls }) {
   const [position, setPosition] = useState(0);
@@ -37,37 +38,16 @@ function Carousel({ imageUrls }) {
           </li>
         ))}
       </ul>
-      {imageUrls.length > 1 && (
-        // uniquement afficher les boutons s'il y a plusieurs photos
-        <>
-          <button className="wrapper-icon icon-left" onClick={handleLeftClick}>
-            <i className="fa-solid fa-chevron-left"></i>
-          </button>
-          <button
-            className="wrapper-icon icon-right"
-            onClick={handleRightClick}
-          >
-            <i className="fa-solid fa-chevron-right"></i>
-          </button>
-        </>
-      )}
-      {imageUrls.length > 1 && (
-        <div className="pagination">{`${position + 1}/${
-          imageUrls.length
-        }`}</div>
-      )}
-      {imageUrls.length > 1 && (
-        <div className="pagination-mobile">
-          {imageUrls.map((_, idx) => (
-            <PaginationDot
-              position={position}
-              idx={idx}
-              onClick={handleMobileClick}
-              key={idx}
-            />
-          ))}
-        </div>
-      )}
+      <Buttons
+        imageUrls={imageUrls}
+        onLeftClick={handleLeftClick}
+        onRightClick={handleRightClick}
+      />
+      <Pagination
+        onClick={handleMobileClick}
+        position={position}
+        imageUrls={imageUrls}
+      />
     </div>
   );
 }

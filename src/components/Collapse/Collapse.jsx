@@ -1,30 +1,29 @@
 import { useState } from "react";
 import "./collapse.scss";
+import CollapseContent from "./CollapseContent";
+import CollapseTitle from "./CollapseTitle";
 
 function Collapse({ item, title }) {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const { description, equipments } = item;
   // rendu conditionnel en fonction de la valeur de "title" à l'aide de l'opérateur ternaire
 
+  function handleClick() {
+    setIsCollapsed((val) => !val);
+  }
+
   return (
     <div className={`container-collapse ${isCollapsed ? "" : "visible"}`}>
-      <h3 className="title" onClick={() => setIsCollapsed((val) => !val)}>
-        {title}
-        <span className={`${isCollapsed ? "" : "chevron-down"}`}>
-          <i className="fa-solid fa-chevron-up"></i>
-        </span>
-      </h3>
-      {title === "Équipements" ? (
-        <ul className={`list`}>
-          {equipments.map((equipm) => (
-            <li className="item" key={equipm}>
-              {equipm}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p className={`text`}>{description}</p>
-      )}
+      <CollapseTitle
+        onClick={handleClick}
+        isCollapsed={isCollapsed}
+        title={title}
+      />
+      <CollapseContent
+        description={description}
+        equipments={equipments}
+        title={title}
+      />
     </div>
   );
 }
