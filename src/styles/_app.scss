@@ -46,12 +46,12 @@
 
 .column-right {
   @include column(0);
-
   justify-content: space-around;
 }
 
 .column-about {
   @include column(30px);
+  padding: 0 8.75%;
 }
 
 .row-end {
