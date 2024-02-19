@@ -5,6 +5,7 @@ import Buttons from "./Buttons";
 
 function Carousel({ imageUrls }) {
   const [position, setPosition] = useState(0);
+  console.log(position);
 
   const handleRightClick = () => {
     // retour à la première image après la dernière
@@ -32,7 +33,7 @@ function Carousel({ imageUrls }) {
           // - La variable "position" repositionne l'image vers la gauche (positionnement dynamique)
           <li
             key={idx}
-            style={{ transform: `translateX(${idx * 100 - position * 100}%)` }}
+            style={{ transform: `translateX(${(idx - position) * 100}%)` }}
           >
             <img src={url} alt={url} />
           </li>
@@ -44,9 +45,9 @@ function Carousel({ imageUrls }) {
         onRightClick={handleRightClick}
       />
       <Pagination
+        imageUrls={imageUrls}
         onClick={handleMobileClick}
         position={position}
-        imageUrls={imageUrls}
       />
     </div>
   );

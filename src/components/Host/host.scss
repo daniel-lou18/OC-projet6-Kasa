@@ -1,7 +1,7 @@
 @import "../../main.scss";
 
 .row-host {
-  @include row();
+  @include rowMixin();
   align-items: center;
   height: 64px;
 

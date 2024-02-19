@@ -6,7 +6,7 @@ import CollapseTitle from "./CollapseTitle";
 function Collapse({ item, title }) {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const { description, equipments } = item;
-  // rendu conditionnel en fonction de la valeur de "title" à l'aide de l'opérateur ternaire
+  // rendu conditionnel en fonction de la valeur de "isCollapsed" à l'aide de l'opérateur ternaire
 
   function handleClick() {
     setIsCollapsed((val) => !val);

@@ -32,7 +32,7 @@
 }
 
 .column-left {
-  @include column(0);
+  @include columnMixin(0);
 
   h1 {
     line-height: 1.2;
@@ -45,22 +45,22 @@
 }
 
 .column-right {
-  @include column(0);
+  @include columnMixin(0);
   justify-content: space-around;
 }
 
 .column-about {
-  @include column(30px);
+  @include columnMixin(30px);
   padding: 0 8.75%;
 }
 
 .row-end {
-  @include row(flex-end, 50px, initial);
+  @include rowMixin(flex-end, 50px, initial);
   align-items: start;
 }
 
 .row-summary {
-  @include row();
+  @include rowMixin();
 
   margin: 30px 0;
 
@@ -72,7 +72,7 @@
 }
 
 .row-start {
-  @include row(flex-start);
+  @include rowMixin(flex-start);
   // Pour éviter qu'un collapse s'étire quand l'autre collapse est plus haut
 }
 

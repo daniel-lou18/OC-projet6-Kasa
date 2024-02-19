@@ -1,7 +1,7 @@
 @import "../../main.scss";
 
 .column-404 {
-  @include column(100px);
+  @include columnMixin(100px);
   align-items: center;
 
   > * {
