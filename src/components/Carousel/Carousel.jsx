@@ -5,7 +5,6 @@ import Buttons from "./Buttons";
 
 function Carousel({ imageUrls }) {
   const [position, setPosition] = useState(0);
-  console.log(position);
 
   const handleRightClick = () => {
     // retour à la première image après la dernière
