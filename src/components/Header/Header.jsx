@@ -10,10 +10,12 @@ function Header() {
         <Link to="/">
           <img src="/LOGO.png" alt="logo" />
         </Link>
-        <Row className="row-end">
-          <NavLink to="/">Accueil</NavLink>
-          <NavLink to="about">A propos</NavLink>
-        </Row>
+        <nav>
+          <Row className="row-end">
+            <NavLink to="/">Accueil</NavLink>
+            <NavLink to="about">A propos</NavLink>
+          </Row>
+        </nav>
       </Row>
     </header>
   );
